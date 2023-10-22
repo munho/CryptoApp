@@ -34,6 +34,12 @@ dependencies {
     implementation(project(":feature:home"))
     implementation(project(":feature:favorite"))
 
+    implementation(project(":core:socket"))
+    implementation(project(":core:cache"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:data"))
+    implementation(project(":core:model"))
+    implementation(project(":core:network"))
     implementation(project(":core:designsystem"))
 
     implementation(libs.androidxCoreKtx)
