@@ -17,6 +17,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.jeremy.crypto.favorite.favoriteNavGraph
+import com.jeremy.crypto.home.homeNavGraph
 
 fun NavGraphBuilder.mainNavGraph() {
     composable(
@@ -103,8 +105,8 @@ fun MainNavGraph(
         startDestination = BottomNavItem.Home.screenRoute
     ) {
         val modifier = Modifier.padding(bottom = bottomBarHeight)
-//        homeNavGraph(navController, modifier)
-//        favoriteNavGraph()
+        homeNavGraph(navController, modifier)
+        favoriteNavGraph(navController, modifier)
     }
 }
 

@@ -32,6 +32,7 @@ android {
 
 dependencies {
     implementation(project(":feature:home"))
+    implementation(project(":feature:favorite"))
 
     implementation(project(":core:designsystem"))
 
