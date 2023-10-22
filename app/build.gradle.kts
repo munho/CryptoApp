@@ -31,6 +31,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:home"))
+
     implementation(project(":core:designsystem"))
 
     implementation(libs.androidxCoreKtx)
