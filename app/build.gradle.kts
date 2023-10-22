@@ -31,7 +31,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":designsystem"))
+    implementation(project(":core:designsystem"))
 
     implementation(libs.androidxCoreKtx)
     implementation(libs.androidxActivityCompose)
