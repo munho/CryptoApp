@@ -14,9 +14,11 @@ android {
 }
 
 dependencies {
-    implementation(libs.retrofit)
     implementation(libs.okHttpCore)
     implementation(libs.okhttpLogging)
+
+    implementation(libs.thunder)
+    implementation(libs.thunderOkhttp)
 
     testImplementation(libs.junit)
     testImplementation(libs.kotlinxCoroutinesTest)
