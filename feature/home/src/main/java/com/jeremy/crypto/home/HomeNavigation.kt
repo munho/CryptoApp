@@ -1,16 +1,24 @@
 package com.jeremy.crypto.home
 
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
+import androidx.navigation.navigation
+import com.jeremy.crypto.navigation.route.MainRoute
+import com.jeremy.crypto.navigation.route.ScreenRoute
+import com.jeremy.crypto.navigation.AppComposeNavigator
 
-const val homeRoute = "home_route"
 
-fun NavGraphBuilder.homeNavGraph(navHostController: NavHostController, modifier: Modifier) {
-    composable(
-        route = homeRoute
+fun NavGraphBuilder.homeNavGraph(
+    appNavigator: AppComposeNavigator
+) {
+    navigation(
+        startDestination = ScreenRoute.Home.route,
+        route = MainRoute.Home.route,
     ) {
-        HomeScreen()
+        composable(
+            route = ScreenRoute.Home.route
+        ) {
+            HomeScreen(appNavigator)
+        }
     }
 }

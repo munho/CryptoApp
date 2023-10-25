@@ -4,10 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.jeremy.crypto.feature.favorite"
+    namespace = "com.jeremy.crypto.feature.main"
 }
 
 dependencies {
+    implementation(project(":feature:home"))
+    implementation(project(":feature:favorite"))
+
     implementation(libs.androidxComposeMaterial)
     implementation(libs.androidxComposeFoundation)
     implementation(libs.androidxComposeFoundationLayout)

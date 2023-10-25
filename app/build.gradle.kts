@@ -31,6 +31,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:main"))
     implementation(project(":feature:home"))
     implementation(project(":feature:favorite"))
 
@@ -41,12 +42,14 @@ dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:network"))
     implementation(project(":core:designsystem"))
+    implementation(project(":core:navigation"))
 
     implementation(libs.androidxCoreKtx)
     implementation(libs.androidxActivityCompose)
     implementation(libs.androidxComposeRuntime)
     implementation(libs.androidxComposeUiUi)
     implementation(libs.androidxComposeMaterial)
+    implementation(libs.androidxComposeMaterial3)
     implementation(libs.androidxLifecycleRuntimeCompose)
 
     implementation(libs.androidxHiltNavigationCompose)

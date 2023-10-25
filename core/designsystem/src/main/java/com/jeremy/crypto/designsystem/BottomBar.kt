@@ -1,5 +1,7 @@
 package com.jeremy.crypto.designsystem
 
+import com.jeremy.crypto.core.designsystem.R
+
 object BottomBar {
     val HomeTabString = R.string.tab_home
 
