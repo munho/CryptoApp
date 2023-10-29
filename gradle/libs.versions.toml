@@ -56,6 +56,9 @@ org-jetbrains-kotlin-android = "1.8.0"
 thunderVersion = "0.0.20"
 material = "1.10.0"
 
+protobufPlugin = "0.9.3"
+protobuf = "3.23.0"
+
 [libraries]
 
 # Kotlin
@@ -131,6 +134,10 @@ testRunner = { module = "androidx.test:runner", version.ref = "testRunnerVersion
 testCore = { module = "androidx.test:core", version.ref = "testCoreVersion" }
 archTest = { module = "androidx.arch.core:core-testing", version.ref = "archTesting" }
 
+# proto
+protobuf-kotlin-lite = { group = "com.google.protobuf", name = "protobuf-kotlin-lite", version.ref = "protobuf" }
+protobuf-protoc = { group = "com.google.protobuf", name = "protoc", version.ref = "protobuf" }
+
 # plugin
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePluginVersion" }
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
@@ -147,3 +154,4 @@ hiltGradlePlugin = { id = "com.google.dagger.hilt.android", version.ref = "hiltV
 kspPlugin = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
 ktlintPlugin = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }

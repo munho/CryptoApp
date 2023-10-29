@@ -48,7 +48,7 @@ fun MainScaffold(
             modifier = Modifier.fillMaxSize().padding(innerPadding),
             contentAlignment = Alignment.Center
         ) {
-            when (mainViewState.successLoad) {
+            when (mainViewState.fetchSuccess) {
                 true -> {
                     NavHost(
                         navController = navController,
@@ -59,7 +59,12 @@ fun MainScaffold(
                     }
                 }
                 false -> {
-                    CircularProgressIndicator()
+                    when (mainViewState.fetchError) {
+                        true -> {
+                            // Global Error Screen
+                        }
+                        false -> CircularProgressIndicator()
+                    }
                 }
             }
         }

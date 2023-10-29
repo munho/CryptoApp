@@ -1,5 +1,6 @@
 package com.jeremy.crypto.main
 
 data class MainViewState(
-    val successLoad: Boolean = false
+    val fetchSuccess: Boolean = false,
+    val fetchError: Boolean = false
 )

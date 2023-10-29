@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "com.jeremy.crypto.datastore";
+option java_multiple_files = true;
+
+message UpbitCurrencyCodeCache {
+    map<string, bool> krw_market_code_set = 1;
+    map<string, bool> btc_market_code_set = 2;
+    // NEXT AVAILABLE ID: 3
+}

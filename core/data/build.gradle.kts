@@ -16,6 +16,7 @@ android {
 dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:model"))
+    implementation(project(":core:datastore"))
 
     implementation(libs.retrofit)
     implementation(libs.okHttpCore)
@@ -25,11 +26,3 @@ dependencies {
     testImplementation(libs.kotlinxCoroutinesTest)
     androidTestImplementation(libs.espressoCore)
 }
-
-/*
-* domain - interface(repository)
-* data - impl(repository), interfcace(datasource)
-* network - impl(datasource)
-* api -
-*
-* */
