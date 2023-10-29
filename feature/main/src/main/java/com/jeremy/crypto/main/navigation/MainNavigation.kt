@@ -5,9 +5,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.jeremy.crypto.favorite.favoriteNavGraph
 import com.jeremy.crypto.home.homeNavGraph
+import com.jeremy.crypto.navigation.AppComposeNavigator
 import com.jeremy.crypto.navigation.route.MainRoute
 import com.jeremy.crypto.navigation.route.ScreenRoute
-import com.jeremy.crypto.navigation.AppComposeNavigator
 
 fun NavGraphBuilder.mainNavigation(
     composeNavigator: AppComposeNavigator,

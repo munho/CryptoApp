@@ -37,6 +37,7 @@ androidxDataStore = "1.0.0"
 # Network
 retrofitVersion = "2.9.0"
 okhttp3Version = "4.10.0"
+serializationConverter = "1.0.0"
 
 # Testing
 mockkVersion = "1.10.0"
@@ -108,6 +109,7 @@ kotlinxCoroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-tes
 okHttpCore = { group = "com.squareup.okhttp3", name = "okhttp",  version.ref = "okhttp3Version" }
 okhttpLogging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3Version" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
+serializationConverter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "serializationConverter" }
 
 # DataStore
 androidxDataStoreCore = { group = "androidx.datastore", name = "datastore", version.ref = "androidxDataStore" }
