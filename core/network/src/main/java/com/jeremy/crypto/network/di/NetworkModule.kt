@@ -35,8 +35,20 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideSerializationConverter(): Converter.Factory {
-        return Json.asConverterFactory("application/json".toMediaType())
+    fun provideJson(): Json {
+        return Json {
+            isLenient = true
+            useAlternativeNames = true // can use alternative key
+            ignoreUnknownKeys = true // prevent ignore no matching key exception
+            coerceInputValues = true // Set as non-null type but receive as null type. you can use default value as set true
+            encodeDefaults = true // You can use default value when received data does not have that value.
+        }
+    }
+
+    @Singleton
+    @Provides
+    fun provideSerializationConverter(json: Json): Converter.Factory {
+        return json.asConverterFactory("application/json".toMediaType())
     }
 
     @Singleton
