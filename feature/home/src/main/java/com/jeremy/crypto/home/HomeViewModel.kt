@@ -6,29 +6,44 @@ import com.jeremy.crypto.domain.usecase.GetMarketCodeCacheUseCase
 import com.jeremy.crypto.domain.usecase.GetMarketsTickerUseCase
 import com.jeremy.crypto.model.CurrencyCache
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getMarketCodeCacheUseCase: GetMarketCodeCacheUseCase,
+    getMarketCodeCacheUseCase: GetMarketCodeCacheUseCase,
     private val getMarketsTickerUseCase: GetMarketsTickerUseCase
 ) : ViewModel() {
 
-    fun fetchMarketCodeCache() = getMarketCodeCacheUseCase.execute()
+    val uiState: StateFlow<HomeViewState> = getMarketCodeCacheUseCase()
+        .onStart { HomeViewState.Loading }
         .map(::getMarketsTicker)
-        .launchIn(viewModelScope)
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5_000),
+            initialValue = HomeViewState.Wait
+        )
 
-    private suspend fun getMarketsTicker(currencyCache: CurrencyCache) {
-        val stringBuilder = StringBuilder()
-        currencyCache.krwMarketCodes.forEachIndexed { index, s ->
-            if (index == 0) {
-                stringBuilder.append(s)
-            } else {
-                stringBuilder.append(",$s")
+    private suspend fun getMarketsTicker(currencyCache: CurrencyCache): HomeViewState {
+        return runCatching {
+            getMarketsTickerUseCase(
+                markets = StringBuilder().apply {
+                    currencyCache.krwMarketCodes.forEachIndexed { index, s ->
+                        if (index == 0) append(s) else append(",$s")
+                    }
+                }.toString()
+            )
+        }.fold(
+            onSuccess = {
+                HomeViewState.Success(it)
+            },
+            onFailure = {
+                HomeViewState.Error(it.message)
             }
-        }
-        getMarketsTickerUseCase.execute(stringBuilder.toString())
+        )
     }
 }

@@ -47,6 +47,6 @@ class MainViewModel @Inject constructor(
 
     companion object {
         private const val KRW_SYMBOL_PREFIX = "KRW-"
-        private const val BTC_SYMBOL_PREFIX = "KRW-"
+        private const val BTC_SYMBOL_PREFIX = "BTC-"
     }
 }

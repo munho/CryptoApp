@@ -9,7 +9,7 @@ class GetMarketCodeCacheUseCase @Inject constructor(
     private val marketRepository: MarketRepository
 ) {
 
-    fun execute(): Flow<CurrencyCache> {
+    operator fun invoke(): Flow<CurrencyCache> {
         return marketRepository.marketCache
     }
 }

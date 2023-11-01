@@ -1,5 +1,6 @@
 package com.jeremy.crypto.model
 
+import com.jeremy.crypto.model.BigDecimalMapper.newBigDecimal
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -30,4 +31,25 @@ data class MarketCurrencyItem(
     val trade_time_kst: String,
     val trade_timestamp: Long,
     val trade_volume: Double
-)
+) {
+    fun mapTo(): CurrencyUiItem {
+        return CurrencyUiItem(
+            market = market,
+            tradeDate = trade_date,
+            tradePrice = trade_price.newBigDecimal(),
+            tradeTime = trade_time,
+            tradeVolume = trade_volume,
+            accTradePrice = acc_trade_price_24h.newBigDecimal(),
+            change = change,
+            changePrice = change_price,
+            changeRate = change_rate,
+            highPrice = high_price,
+            lowPrice = low_price,
+            openingPrice = opening_price,
+            prevClosingPrice = prev_closing_price,
+            signedChangePrice = signed_change_price,
+            signedChangeRate = signed_change_rate,
+            timestamp = timestamp
+        )
+    }
+}
