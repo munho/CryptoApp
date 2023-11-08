@@ -42,13 +42,13 @@ data class MarketCurrencyItem(
             accTradePrice = acc_trade_price_24h.newBigDecimal(),
             change = change,
             changePrice = change_price,
-            changeRate = change_rate,
+            changeRate = change_rate * 100,
             highPrice = high_price,
             lowPrice = low_price,
             openingPrice = opening_price,
             prevClosingPrice = prev_closing_price,
             signedChangePrice = signed_change_price,
-            signedChangeRate = signed_change_rate,
+            signedChangeRate = signed_change_rate * 100,
             timestamp = timestamp
         )
     }

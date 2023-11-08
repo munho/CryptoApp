@@ -8,7 +8,7 @@ data class CurrencyUiItem(
     val tradePrice: BigDecimal,
     val tradeTime: String,
     val tradeVolume: Double,
-    val accTradePrice: BigDecimal,
+    val accTradePrice: BigDecimal, //거래 대금
     val change: String,
     val changePrice: Double,
     val changeRate: Double,
