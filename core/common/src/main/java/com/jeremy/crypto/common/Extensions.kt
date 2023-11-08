@@ -11,3 +11,13 @@ fun List<String>.mapToMarketCodesRequest(): String {
     }
     return builder.toString()
 }
+
+fun String.convertMarketChangeState(): MarketChangeState {
+    return if (equals("RISE")) {
+        MarketChangeState.Rise
+    } else if (equals("FALL")) {
+        MarketChangeState.Fall
+    } else {
+        MarketChangeState.Even
+    }
+}
