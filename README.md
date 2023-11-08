@@ -8,6 +8,7 @@
 ## Tech stack & Open-source libraries
 - Minimum SDK level 24 and Target SDK level 33
 - 100% [Kotlin](https://kotlinlang.org/)
+- 100% [Compose](https://developer.android.com/jetpack/compose)
 - [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/)(StateFlow, SharedFlow) + Coroutine for async programming.
 - MVVM + Clean Architecture (Multi Module)
   - Based on the Core, Feature folder, I have modularized it by feature.
