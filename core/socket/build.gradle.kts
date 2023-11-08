@@ -14,6 +14,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:model"))
+    implementation(project(":core:data"))
+
     implementation(libs.okHttpCore)
     implementation(libs.okhttpLogging)
 
@@ -22,5 +25,4 @@ dependencies {
 
     testImplementation(libs.junit)
     testImplementation(libs.kotlinxCoroutinesTest)
-    androidTestImplementation(libs.espressoCore)
 }

@@ -14,6 +14,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:model"))
     implementation(libs.retrofit)
     implementation(libs.okHttpCore)
     implementation(libs.okhttpLogging)

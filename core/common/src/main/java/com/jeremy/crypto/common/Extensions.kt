@@ -5,9 +5,9 @@ fun String.splitMarketCurrency(): String {
 }
 
 fun List<String>.mapToMarketCodesRequest(): String {
-    return StringBuilder().apply {
-        forEachIndexed { index, s ->
-            if (index == 0) append(s) else append(",$s")
-        }
-    }.toString()
+    val builder = StringBuilder()
+    forEachIndexed { index, s ->
+        if (index == 0) builder.append(s) else builder.append(",$s")
+    }
+    return builder.toString()
 }

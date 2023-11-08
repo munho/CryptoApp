@@ -53,7 +53,7 @@ ktlint = "11.3.1"
 org-jetbrains-kotlin-android = "1.8.0"
 
 # Socket
-thunderVersion = "0.0.20"
+thunderVersion = "0.0.22"
 material = "1.10.0"
 
 protobufPlugin = "0.9.3"

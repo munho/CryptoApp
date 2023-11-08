@@ -13,14 +13,20 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
 import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
+import javax.inject.Qualifier
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class ApiType
+
     @Singleton
     @Provides
+    @ApiType
     fun provideHttpClient(): OkHttpClient {
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.HEADERS
@@ -54,7 +60,7 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideRetrofit(
-        okHttpClient: OkHttpClient,
+        @ApiType okHttpClient: OkHttpClient,
         serializationConverter: Converter.Factory
     ): Retrofit {
         return Retrofit.Builder()
