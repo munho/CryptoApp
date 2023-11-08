@@ -10,8 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.jeremy.crypto.common.splitMarketCurrency
 import com.jeremy.crypto.designsystem.component.CryptoTickerView
-import com.jeremy.crypto.designsystem.splitMarketCurrency
 import com.jeremy.crypto.model.BigDecimalMapper.formattedString
 import com.jeremy.crypto.model.CurrencyUiItem
 import com.jeremy.crypto.navigation.AppComposeNavigator

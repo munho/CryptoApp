@@ -2,6 +2,7 @@ package com.jeremy.crypto.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.jeremy.crypto.common.mapToMarketCodesRequest
 import com.jeremy.crypto.domain.usecase.GetMarketCodeCacheUseCase
 import com.jeremy.crypto.domain.usecase.GetMarketsTickerUseCase
 import com.jeremy.crypto.model.CurrencyCache
@@ -30,13 +31,7 @@ class HomeViewModel @Inject constructor(
 
     private suspend fun getMarketsTicker(currencyCache: CurrencyCache): HomeViewState {
         return runCatching {
-            getMarketsTickerUseCase(
-                markets = StringBuilder().apply {
-                    currencyCache.krwMarketCodes.forEachIndexed { index, s ->
-                        if (index == 0) append(s) else append(",$s")
-                    }
-                }.toString()
-            )
+            getMarketsTickerUseCase(markets = currencyCache.krwMarketCodes.mapToMarketCodesRequest())
         }.fold(
             onSuccess = {
                 HomeViewState.Success(it)

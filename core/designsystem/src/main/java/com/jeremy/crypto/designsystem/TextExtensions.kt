@@ -12,7 +12,3 @@ val Int.toDp: TextUnit
 val Float.toDp: TextUnit
     @Composable
     get() = with(LocalDensity.current) { this@toDp.dp.toSp() }
-
-fun String.splitMarketCurrency(): String {
-    return kotlin.runCatching { split("-")[1] }.getOrDefault("")
-}
