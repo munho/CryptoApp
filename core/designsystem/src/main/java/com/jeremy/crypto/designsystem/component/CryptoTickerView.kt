@@ -123,7 +123,8 @@ fun CryptoTickerView(
     ) {
         FluctuationStatusView(
             fluctuateRate = fluctuateRate,
-            fontSize = 14.toDp
+            fontSize = 14.toDp,
+            radius = 4.dp
         )
         Text(
             modifier = Modifier.padding(end = 10.dp),
