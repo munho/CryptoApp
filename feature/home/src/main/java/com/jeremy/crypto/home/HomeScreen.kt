@@ -27,14 +27,18 @@ fun HomeScreen(
     val viewState = homeViewModel.uiState.collectAsStateWithLifecycle().value
     HomeScreen(
         state = viewState,
-        onClick = { appNavigator.navigate(MainRoute.Detail.route) }
+        onClick = { appNavigator.navigate(MainRoute.Detail.route) },
+        onFavoriteClick = {
+
+        }
     )
 }
 
 @Composable
 fun HomeScreen(
     state: HomeViewState,
-    onClick: (CurrencyUiItem) -> Unit
+    onClick: (CurrencyUiItem) -> Unit,
+    onFavoriteClick: (CurrencyUiItem) -> Unit
 ) {
     val scrollState = rememberLazyListState()
     Box(
@@ -49,7 +53,8 @@ fun HomeScreen(
                 CryptoTickersSection(
                     state = state,
                     scrollState = scrollState,
-                    onClick = onClick
+                    onClick = onClick,
+                    onFavoriteClick = onFavoriteClick
                 )
             }
 
@@ -62,7 +67,8 @@ fun HomeScreen(
 fun CryptoTickersSection(
     state: HomeViewState,
     scrollState: LazyListState,
-    onClick: (CurrencyUiItem) -> Unit
+    onClick: (CurrencyUiItem) -> Unit,
+    onFavoriteClick: (CurrencyUiItem) -> Unit,
 ) =  LazyColumn(
     modifier = Modifier.fillMaxSize(),
     state = scrollState
@@ -78,7 +84,8 @@ fun CryptoTickersSection(
             fluctuateRate = it.signedChangeRate.toFloat(),
             fluctuatePrice = it.signedChangePrice.toFloat(),
             change = it.change.convertMarketChangeState(),
-            onClickEvent = { onClick.invoke(it) }
+            onClickEvent = { onClick.invoke(it) },
+            onFavoriteClick = { onFavoriteClick.invoke(it) }
         )
     }
 }

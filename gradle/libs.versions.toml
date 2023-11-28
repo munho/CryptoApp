@@ -70,10 +70,10 @@ androidxComposeBom = { group = "androidx.compose", name = "compose-bom", version
 androidxComposeFoundation = { group = "androidx.compose.foundation", name = "foundation" }
 androidxComposeFoundationLayout = { group = "androidx.compose.foundation", name = "foundation-layout" }
 androidxComposeMaterialIconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
-androidxComposeMaterial = { group = "androidx.compose.material", name = "material",  version.ref = "androidxComposeMaterial" }
-androidxComposeMaterial3 = { group = "androidx.compose.material3", name = "material3",  version.ref = "androidxComposeMaterial3" }
+androidxComposeMaterial = { group = "androidx.compose.material", name = "material", version.ref = "androidxComposeMaterial" }
+androidxComposeMaterial3 = { group = "androidx.compose.material3", name = "material3", version.ref = "androidxComposeMaterial3" }
 androidComposeMaterial3WindowSizeClass = { group = "androidx.compose.material3", name = "material3-window-size-class", version.ref = "androidxComposeMaterial3" }
-androidxComposeRuntime = {  group = "androidx.compose.runtime", name = "runtime" }
+androidxComposeRuntime = { group = "androidx.compose.runtime", name = "runtime" }
 androidxComposeRuntimeLivedata = { group = "androidx.compose.runtime", name = "runtime-livedata" }
 androidxComposeRuntimeTracing = { group = "androidx.compose.runtime", name = "runtime-tracing", version.ref = "androidxComposeRuntimeTracing" }
 androidxComposeAnimation = { group = "androidx.compose.animation", name = "animation" }
@@ -86,7 +86,7 @@ androidxComposeUiUtil = { group = "androidx.compose.ui", name = "ui-util" }
 androidxComposeUiGoogleFonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts" }
 androidxActivityCompose = { group = "androidx.activity", name = "activity-compose", version.ref = "composeActivityVersion" }
 androidxHiltNavigationCompose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationComposeVersion" }
-androidxNavigationCompose = {group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigationVersion" }
+androidxNavigationCompose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigationVersion" }
 accompanistNavigationAnimation = { group = "com.google.accompanist", name = "accompanist-navigation-animation", version.ref = "accomPanistVersion" }
 androidxLifecycleLivedataKtx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "androidxLifecycleVersion" }
 androidxLifecycleRuntimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycleVersion" }
@@ -109,7 +109,7 @@ kotlinxCoroutinesAndroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-
 kotlinxCoroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesVersion" }
 
 # Retrofit
-okHttpCore = { group = "com.squareup.okhttp3", name = "okhttp",  version.ref = "okhttp3Version" }
+okHttpCore = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp3Version" }
 okhttpLogging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3Version" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
 serializationConverter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "serializationConverter" }
@@ -122,8 +122,8 @@ androidxDataStorePreferences = { group = "androidx.datastore", name = "datastore
 androidxPaging3Compose = { group = "androidx.paging", name = "paging-compose", version.ref = "androidxPaging3Compose" }
 
 # Socket
-thunder = { group = "com.github.jaeyunn15.Thunder", name = "thunder", version.ref = "thunderVersion" }
-thunderOkhttp = { group = "com.github.jaeyunn15.Thunder", name = "thunder-okhttp", version.ref = "thunderVersion" }
+thunder = { group = "io.github.jaeyunn15", name = "thunder", version = "1.0.3" }
+thunderOkhttp = { group = "io.github.jaeyunn15", name = "thunder-okhttp", version = "1.0.3" }
 
 # test
 junit = { module = "junit:junit", version.ref = "junitVersion" }

@@ -19,6 +19,7 @@ dependencies {
     implementation(libs.androidxComposeFoundation)
     implementation(libs.androidxComposeFoundationLayout)
     implementation(libs.androidxComposeMaterial)
+    implementation(libs.androidxComposeMaterial3)
     implementation(libs.androidxComposeUiTooling)
     implementation(libs.androidxComposeUiToolingPreview)
     implementation(libs.androidxComposeUiUi)

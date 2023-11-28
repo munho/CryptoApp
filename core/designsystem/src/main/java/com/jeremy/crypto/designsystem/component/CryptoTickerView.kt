@@ -55,6 +55,7 @@ fun CryptoTickerView(
     fluctuatePrice: Float,
     change: MarketChangeState,
     onClickEvent: () -> Unit,
+    onFavoriteClick: () -> Unit,
     infiniteTransition: InfiniteTransition = rememberInfiniteTransition(label = "")
 ) = Row(
     modifier = modifier
@@ -77,11 +78,17 @@ fun CryptoTickerView(
         label = "animation alpha"
     )
     var animateNeed by remember { mutableStateOf(false) }
-    LaunchedEffect(key1 = lastPrice) {
+    LaunchedEffect(key1 = fluctuateRate) {
         animateNeed = true
         delay(animationDurationTimeMills.toLong())
         animateNeed = false
     }
+    FavoriteButton(
+        checked = false,
+        onCheckedChange = onFavoriteClick,
+        modifier = Modifier.padding(2.dp)
+    )
+    Spacer(modifier = Modifier.width(10.dp))
     Text(
         text = name,
         modifier = Modifier,

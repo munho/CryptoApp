@@ -1,6 +1,5 @@
 package com.jeremy.crypto.data.repository
 
-import android.util.Log
 import com.jeremy.crypto.cache.TickerCache
 import com.jeremy.crypto.data.datasource.MarketDataSource
 import com.jeremy.crypto.domain.repository.TickerRepository
